@@ -21,7 +21,7 @@ namespace CardsShuffle
             var bottom = startingDeck.Skip(26);
             var shuffle = top.InterleaveSequenceWith(bottom);
 
-            Console.WriteLine("==================================");
+            Console.WriteLine("===================================");
             Console.WriteLine("Перетасовананя колода");
             foreach (var c in shuffle)
             {
