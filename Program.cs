@@ -10,41 +10,39 @@ namespace CardsShuffle
         {
             var startingDeck = from s in Suits()
                                from r in Ranks()
-                               select new { Suit = s, Rank = r };
+                               select new { Масть = s, Ранг = r };
 
-            // Display each card that we've generated and placed in startingDeck in the console
+            
             foreach (var c in startingDeck)
             {
                 Console.WriteLine(c);
             }
-
-            // 52 cards in a deck, so 52 / 2 = 26
             var top = startingDeck.Take(26);
             var bottom = startingDeck.Skip(26);
         }
         static IEnumerable<string> Suits()
         {
-            yield return "clubs";
-            yield return "diamonds";
-            yield return "hearts";
-            yield return "spades";
+            yield return "Буби";
+            yield return "Крести";
+            yield return "Черви";
+            yield return "Пики";
         }
 
         static IEnumerable<string> Ranks()
         {
-            yield return "two";
-            yield return "three";
-            yield return "four";
-            yield return "five";
-            yield return "six";
-            yield return "seven";
-            yield return "eight";
-            yield return "nine";
-            yield return "ten";
-            yield return "jack";
-            yield return "queen";
-            yield return "king";
-            yield return "ace";
+            yield return "Два";
+            yield return "Три";
+            yield return "ЧОтыре";
+            yield return "Пять";
+            yield return "Шесть";
+            yield return "Семь";
+            yield return "Восемь";
+            yield return "Девять";
+            yield return "Десять";
+            yield return "Валет";
+            yield return "Дама";
+            yield return "Король";
+            yield return "Туз";
         }
     }
 }
