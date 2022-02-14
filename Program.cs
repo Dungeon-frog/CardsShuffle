@@ -12,13 +12,21 @@ namespace CardsShuffle
                                from r in Ranks()
                                select new { Масть = s, Ранг = r };
 
-            
+            Console.WriteLine("Начальная колода");
             foreach (var c in startingDeck)
             {
                 Console.WriteLine(c);
             }
             var top = startingDeck.Take(26);
             var bottom = startingDeck.Skip(26);
+            var shuffle = top.InterleaveSequenceWith(bottom);
+
+            Console.WriteLine("==================================");
+            Console.WriteLine("Перетасовананя колода");
+            foreach (var c in shuffle)
+            {
+                Console.WriteLine(c);
+            }
         }
         static IEnumerable<string> Suits()
         {
